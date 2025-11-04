@@ -1,0 +1,22 @@
+project:
+  type: manuscript
+  output-dir: rendered
+
+
+manuscript:
+  article: index.qmd
+
+format:
+  html:
+    comments:
+      hypothesis: true
+
+  # (other formats)
+  # pdf: default
+  # docx: default
+
+execute:
+  freeze: auto
+
+
+

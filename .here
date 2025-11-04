@@ -1,0 +1,2 @@
+This file is used as a reference for the R package `here` and the python module `pyprojroot`. 
+When using the function `here()` from each package, it creates relative paths from this directory.
