@@ -1,0 +1,17 @@
+{
+  "hash": "13e7f4d60c5a52920a25168cfec3e082",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"3. Plotting\"\n---\n\n\n::: {.cell}\n\n```{.r .cell-code .hidden}\n#| label: setup\n#| warning: false\n\n# load libs\nlibrary(tidyverse)\n```\n\n::: {.cell-output .cell-output-stderr .hidden}\n\n```\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors\n```\n\n\n:::\n\n```{.r .cell-code .hidden}\n#| label: setup\n#| warning: false\n\nlibrary(here)\n```\n\n::: {.cell-output .cell-output-stderr .hidden}\n\n```\nhere() starts at H:/Dokumente/00_active-projects/2025_methods-website/setup_research-project\n```\n\n\n:::\n\n```{.r .cell-code .hidden}\n#| label: setup\n#| warning: false\n\n# source custom code\nsource(here('scripts/custom_ggplot.R')) ## for custom ggplot themes\n\n# define global variables\ncustom_dpi = 600\ncustom_unit = 'cm'\ncustom_width = 18.2\ncustom_height = custom_width * 0.61803\n```\n:::\n\n\n## Read Data / Models\n\n\n::: {.cell}\n\n```{.r .cell-code .hidden}\n#| label: read_info\n\ndf <- read_csv(\n  here('data/processed/example.csv'),\n  show_col_types = FALSE\n)\n\nmod_lm <- readRDS(here('mods/example.rds'))\n```\n:::\n\n\n## Create Plots\n\n\n::: {#cell-fig-prediction .cell}\n\n```{.r .cell-code .hidden}\n#| label: fig-prediction\n#| fig-cap: Relation of hp with mpg.\n\n# create plot\nplot_mod <-\n  ggplot(\n    df,\n    aes(\n      x = hp,\n      y = mpg,\n      color = as.factor(gear)\n    )\n  ) +\n  geom_point() +\n  geom_abline(\n    slope = mod_lm$coefficients['hp'],\n    intercept = mod_lm$coefficients['(Intercept)']\n  ) +\n  labs(\n    title = 'Predicted Relation of hp and mpg',\n    color = 'Gear'\n  )\n\n\n# show plot\nplot_mod\n```\n\n::: {.cell-output-display}\n![Relation of hp with mpg.](03_plotting_files/figure-html/fig-prediction-1.png){#fig-prediction width=672}\n:::\n:::\n\n\n## Save Plots\n\n\n\n::: {.cell}\n\n```{.r .cell-code .hidden}\n#| label: save_plot\n#| eval: false\n\nggsave(\n  here('plots/example.png'),\n  plot = plot_mod,\n  width = custom_width,\n  height = custom_height,\n  units = custom_unit,\n  dpi = custom_dpi\n)\n```\n:::\n",
+    "supporting": [
+      "03_plotting_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
