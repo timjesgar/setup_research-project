@@ -1,0 +1,36 @@
+---
+title: Your Title
+authors:
+  - name: Your Name
+    affiliation: Your Affiliation
+    roles: writing
+    corresponding: true
+keywords:
+  - keyword1
+  - keyword2
+abstract: |
+  If you want to include an abstract you can do it here.
+bibliography: references.bib
+number-sections: true
+---
+## Introduction
+
+## Methods
+
+## Results
+
+{{< embed notebooks/02_analysis.qmd#tbl-coefs >}}
+
+{{< embed notebooks/03_plotting.qmd#fig-prediction >}}
+
+
+Both, hp and gear have a statistically significant effect on mpg (see @tbl-coefs).
+in addition, see @fig-prediction.
+
+
+## Discussion
+
+## References {.unnumbered}
+:::{#refs}
+
+:::
