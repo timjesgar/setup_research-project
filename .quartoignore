@@ -1,0 +1,21 @@
+# example files
+_freeze/
+docs/*
+mods/example.rds
+data/raw/raw_example.csv
+data/processed/exampled.csc
+
+# renv-specific ignores
+renv/library/
+renv/local/
+renv/cellar/
+renv/lock/
+renv/python/
+renv/sandbox/
+renv/staging/
+!renv/.gitignore
+
+# keep some hidden files
+!.gitignore
+!.Rprofile
+
