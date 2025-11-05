@@ -1,0 +1,73 @@
+---
+title: "2. Analysis"
+---
+
+```{r}
+#| label: setup
+#| warning: false
+
+# load libs
+library(tidyverse)
+library(here)
+library(broom)
+library(knitr)
+
+# source custom code
+
+# define global variables
+
+```
+
+# Read Processed Data
+
+```{r}
+#| label: df
+
+df <-
+  read_csv(
+    here('data/processed/example.csv'),
+    show_col_types = FALSE
+  ) |>
+  ## gear, is categorical -> define as factor
+  mutate(
+    gear = factor(gear)
+  ) |>
+  ## we only examine the effect of hp and gear on mpg
+  select(mpg, hp, gear)
+```
+
+# Analysis
+
+```{r}
+#| label: mod_lm
+
+mod_lm <-
+  lm(
+    mpg ~ hp + gear,
+    data = df
+  )
+
+# examine model
+summary(mod_lm)
+```
+
+# Examine Model
+
+```{r}
+#| label: tbl-coefs
+#| tbl-cap: Coefficients of the model.
+
+mod_lm |>
+  tidy() |>
+  kable()
+```
+
+# Save Analysis/Model Objects
+
+```{r}
+#| label: save_mod
+#| eval: false
+
+saveRDS(mod_lm, here('mods/example.rds'))
+```
+
