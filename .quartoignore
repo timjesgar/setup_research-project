@@ -3,11 +3,11 @@ _freeze/
 docs/
 mods/example.rds
 data/raw/raw_example.csv
-data/processed/exampled.csv
+data/processed/example.csv
 
 # renv-specific ignores
-renv/
-renv.lock
+!renv
+!.Rprofile
 
 # keep some hidden files
 !.gitignore
