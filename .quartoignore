@@ -1,20 +1,11 @@
-# example files
+# ignore example files
 _freeze/
 docs/
 mods/example.rds
 data/raw/raw_example.csv
 data/processed/example.csv
 
-# renv-specific ignores
-!renv
+# dot file ignores
 !.*
 .nojekyll
 .quartoignore
-# !.Rprofile
-
-
-# keep some hidden files
-# !.gitignore
-!mods/.gitkeep
-!data/raw/.gitkeep
-!data/processed/.gitkeep
