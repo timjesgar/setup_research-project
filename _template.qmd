@@ -1,0 +1,18 @@
+---
+message: |
+  ✓ Project '{{project_name}}' created successfully.
+
+  For increased reproducibility, initiate a renv-environment to record package versions.
+
+  To get started:
+  1. Open your project in your favorite IDE (e.g., Positron or RStudio).
+  2. Run the following to initiate a fresh environment:
+
+     install.packages("renv")
+     renv::init()
+
+  3. Now you can `install.packages()` all packages needed for your project.
+  4. Whenever you include new packages in your project, don't forget to check if your code is working and save the versions of your packages via `renv::snapshot()`.
+
+  Happy analyzing!
+---
