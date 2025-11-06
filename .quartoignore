@@ -8,6 +8,8 @@ data/processed/example.csv
 # renv-specific ignores
 !renv
 !.*
+.nojekyll
+.quartoignore
 # !.Rprofile
 
 
