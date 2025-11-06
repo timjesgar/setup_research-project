@@ -11,7 +11,7 @@ library(tidyverse)
 library(here)
 
 # source custom code
-
+source(here('scripts/setup.R'))
 # define global variables
 
 ```

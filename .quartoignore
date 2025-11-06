@@ -7,10 +7,12 @@ data/processed/example.csv
 
 # renv-specific ignores
 !renv
-!.Rprofile
+!.*
+# !.Rprofile
+
 
 # keep some hidden files
-!.gitignore
+# !.gitignore
 !mods/.gitkeep
 !data/raw/.gitkeep
 !data/processed/.gitkeep
