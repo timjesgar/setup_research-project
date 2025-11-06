@@ -1,13 +1,16 @@
 # example files
 _freeze/
-docs/*
+docs/
 mods/example.rds
 data/raw/raw_example.csv
 data/processed/exampled.csv
 
 # renv-specific ignores
 renv/
+renv.lock
 
 # keep some hidden files
 !.gitignore
-
+!mods/.gitkeep
+!data/raw/.gitkeep
+!data/processed/.gitkeep
